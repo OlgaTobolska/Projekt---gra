@@ -9,11 +9,11 @@ protected:
 	double y;
 	SDL_Surface* obraz;
 public:
-	Postac(double _x, double _y)
+	Postac(double _x, double _y, SDL_Surface* _obraz)
 	{
 		x = _x;
 		y = _y;
-		obraz = NULL;
+		obraz = _obraz;
 	}
 	virtual void kolizja()
 	{

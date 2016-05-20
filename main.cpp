@@ -10,6 +10,13 @@
 #include "Blok.h"
 using namespace std;
 
+// poczatkowa pozycja DP
+double x;
+double y;
+// wielkosc DP
+double w;
+double h;
+
 // ustawienie okna
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
@@ -208,7 +215,61 @@ void close()
 }
 
 void stworzenieBlokow()
-{}
+{
+	for (int i = 0; i < 5; i++)
+	{
+		poziom1.push_back(new Blok(x + (5 + i) * w, y + h, gBlok));
+	}
+	for (int i = 0; i < 3; i++)
+	{
+		poziom1.push_back(new Blok(x + (8 + i) * w, y + 3 * h, gBlok));
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		poziom1.push_back(new Blok(x + (16 + i) * w, y + h, gBlok));
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		poziom1.push_back(new Blok(x + (23 + i) * w, y + h, gBlok));
+	}
+	for (int i = 0; i < 5; i++)
+	{
+		poziom1.push_back(new Blok(x + (25 + i) * w, y + 3 * h, gBlok));
+	}
+	for (int i = 0; i < 3; i++)
+	{
+		poziom1.push_back(new Blok(x + (29 + i) * w, y / 2, gBlok));
+	}
+	for (int i = 0; i < 2; i++)
+	{
+		poziom1.push_back(new Blok(x + (32 + i) * w, y + 2.5 * h, gBlok));
+	}
+	for (int i = 0; i < 5; i++)
+	{
+		poziom1.push_back(new Blok(x + (38 + i) * w, y / 2, gBlok));
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		poziom1.push_back(new Blok(x + (42 + i) * w, y + 2.5 * h, gBlok));
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		poziom1.push_back(new Blok(x + (44 + i) * w, y + 4.5 * h, gBlok));
+	}
+	poziom1[32].zmienBonus(gBonus1);
+	poziom1[9].zmienBonus(gBonus2);
+	poziom1[18].zmienBonus(gBonus3);
+	poziom1[14].zmienBonus(gBonus3);
+}
+
+void stworzenieWrogow()
+{
+	enemies_p1.push_back(new Ajax(x + 20 * w, y, gAjax));
+	enemies_p1.push_back(new Ajax(x + 25 * w, y + 2 * h, gAjax));
+	enemies_p1.push_back(new Ajax(x + 33 * w, y, gAjax));
+	enemies_p1.push_back(new Ajax(x + 36 * w, y, gAjax));
+	enemies_p1.push_back(new Ajax(x + 25 * w, y, gAjax));
+}
 
 int main(int argc, char* args[])
 {
